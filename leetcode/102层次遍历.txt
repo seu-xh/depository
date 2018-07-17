@@ -1,0 +1,28 @@
+ class Solution {
+ public:
+	 vector<vector<int>> levelOrder(TreeNode* root) {
+		 vector<vector<int>>LevelSequence;
+		 vector<int>A;
+		 if (root == NULL) return LevelSequence;
+		 queue<TreeNode*>q;
+		 TreeNode *tmp,*lastlevel;
+		 lastlevel = root;
+		 int level = 0;
+		 q.push(root);
+		 while (!q.empty()) {
+			 tmp = q.front(); 
+			 A.push_back(tmp->val);
+			 q.pop();
+			 if (tmp->left)
+				 q.push(tmp->left);
+			 if (tmp->right)
+				 q.push(tmp->right);
+			 if (tmp == lastlevel) {
+				 LevelSequence.push_back(A);
+				 A.clear();
+				 lastlevel = q.back();
+			 }
+		 }
+		 return LevelSequence;
+	 }
+ };

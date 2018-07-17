@@ -1,0 +1,25 @@
+sort(iterator a,iterator b,cmp);
+
+bool cmp(zhang a,zhang b)  //a的优先级高
+{  
+    return a.x > b.x ;//按x从大到小排序 "<"从小到大排序 同普通数组  
+    // strcmp(a.s,b.s) > 0 ? 1 : 0 ; // 比较字符串，大于0 降序，反之升序  
+}  
+
+priority<type,vector<type>,type(cmp)>q(cmp);//cmp主要用于覆盖type中的"<"号
+
+bool cmp(zhang a,zhang b)  //a的优先级低
+{  
+    return a.x > b.x ;//按x从小到大排序，a.x越大优先级越低
+    
+}  
+
+struct zhang    
+{    
+   int x,y,z;    
+     friend bool operator<(const zhang &a,const zhang &b)//operator后 " < " 很重要！！  
+    {    
+            return a.x < b.x ;//从大到小出队 " > " 从小到大出队   
+    }    
+    
+};   

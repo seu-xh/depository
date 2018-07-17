@@ -1,0 +1,18 @@
+ void preorder(TreeNode* root,TreeNode* &pre) {
+	 if (root) {
+		 if (pre) pre->right = root;
+		 pre = root;
+		 TreeNode* a=root->left;
+		 TreeNode* b=root->right;
+		 root->left = NULL;
+		 preorder(a, pre);
+		 preorder(b, pre);
+	 }
+ }
+ class Solution {
+ public:
+	 void flatten(TreeNode* root) {
+		 TreeNode* pre(NULL);
+		 preorder(root, pre);
+	 }
+ };

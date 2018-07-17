@@ -1,0 +1,20 @@
+ class Solution {
+ public:
+	 vector<int> inorderTraversal(TreeNode* root) {
+		 vector<int>InorderSequence;
+		 if (root == NULL) return InorderSequence;
+		 TreeNode* tmp(root);
+		 stack<TreeNode*>s;
+		 while (tmp || !s.empty()) {
+			 while (tmp) {
+				 s.push(tmp);
+				 tmp = tmp->left;
+			 }
+			 tmp = s.top();
+			 InorderSequence.push_back(tmp->val);
+			 s.pop();
+			 tmp = tmp->right;
+		 }
+		 return InorderSequence;
+	 }
+ };

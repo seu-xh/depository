@@ -1,0 +1,1 @@
+https://leetcode.com/problems/string-to-integer-atoi/discuss/4654/My-simple-solution
