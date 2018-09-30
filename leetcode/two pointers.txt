@@ -1,0 +1,36 @@
+two pointer 大多用在1.求字符串是否存在连续的子串满足特定的条件  2.对于一些数组里找一些答案（数组大多要是排好序的）
+
+ int a=0,b=0;
+        if(len==0||s==0)
+            return 0;
+        int sum=0;
+        int minL=len+1;
+        while(b<len)
+        {
+          sum+=nums[b++];
+            while(sum>=s)
+            {
+                minL=min(minL,b-a);
+                sum-=nums[a++];
+            }
+        }
+
+
+two pointers判定true条件的时候 灵活些 leetcode567           (判断是否找到 大多是通过两个指针的距离是否满足待寻找的串的长度 )
+
+有时候遇到 元素不是一个一个跳的时候 leetcode30
+
+
+模板 for(int i=0,j=0;j<len;j++)
+{
+	先把第j个元素处理了；
+	if(条件不符合le)
+	{
+	while(不符合基本条件)
+	{
+	i++;
+	}
+	}
+
+	判定下是否可以返回true
+}
