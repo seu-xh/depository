@@ -47,3 +47,10 @@ Remove last bit A&(A-1)
 Get all 1-bits ~0
 https://leetcode.com/problems/sum-of-two-integers/discuss/84278/A-summary:-how-to-use-bit-manipulation-to-solve-problems-easily-and-efficiently
 c++中的bitset类
+
+
+
+https://www.cnblogs.com/bjwu/p/9323808.html（一个数组中只有一个数出现了m次，其他都出现了n次，找出这个数）
+
+
+
