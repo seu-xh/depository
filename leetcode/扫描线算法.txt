@@ -1,0 +1,21 @@
+扫描线算法：
+关于扫描线算法用来求一些线段的overlap数量，需要将线段上所有的点进行顺序排序，然后从头到尾遍历一遍，遇到起点就+1，遇到终点就-1。
+想法一：
+Line(start,end):
+Vector<pair<int,int>>lines
+Pair<int,int> first:点的坐标，second:0表示起点，1表示终点。
+这个方法有个陷阱：遍历的时候要注意把与当前点位置相同的所有点都算完再更新overlap的结果。
+想法二：
+Map<int,int>mp;//不可以使用unordered_map，因为要保证我们遍历是按照position的顺序遍历。
+对于Line(start,end)，mp[start]++,mp[end]--;
+最后直接遍历mp
+for(auto t:mp)
+Overlap+=t.second;
+
+
+
+
+218. The Skyline Problem
+
+
+
